@@ -115,7 +115,7 @@
   </nav>
 
   <h1>Privacy Policy</h1>
-  <p class="meta">Last updated: July 11, 2026 · Version 1.1 · App: Gramly (com.gramly.app)</p>
+  <p class="meta">Last updated: July 15, 2026 · Version 1.2 · App: Gramly (com.gramly.app)</p>
 
   <!-- 1 -->
   <h2>1. Who We Are</h2>
@@ -167,14 +167,17 @@
   <h2>3. How Your Data is Stored</h2>
 
   <div class="notice">
-    <strong>Key fact:</strong> The vast majority of your data is stored <strong>exclusively on your device</strong>,
-    in a local SQLite database. Gramly does not operate its own user data storage servers.
+    <strong>Key fact:</strong> Your data lives primarily on your device, in a local SQLite database.
+    So you can recover your account if you switch or lose your phone, we also keep a copy of your account
+    data in our secure cloud (Supabase). Your meal history photos and AI chat <strong>never</strong>
+    leave your device.
   </div>
 
   <h3>3.1 Local Storage (Your Device)</h3>
   <p>
     Your meal history, macronutrients, calories, weight logs, water logs, favorites and profile settings
-    all reside in the app's internal SQLite database. No one can access this data through our systems.
+    all reside in the app's internal SQLite database and are what you use day to day. A copy of your account
+    data is also backed up to the cloud (see 3.4).
   </p>
 
   <h3>3.2 Android Auto Backup (Google Drive)</h3>
@@ -190,6 +193,27 @@
     Photos are saved in your device's internal storage (<code>Documents/meals/</code>),
     not on any Gramly server. History photos are <strong>automatically deleted</strong> after 365 days.
     Photos saved as favorite meals are kept indefinitely until you manually remove them.
+    History photos are <strong>not</strong> uploaded to the cloud.
+  </p>
+
+  <h3>3.4 Cloud Sync (Account Backup)</h3>
+  <p>
+    When you sign in with your account, Gramly keeps a copy of your account data in our cloud database
+    (<strong>Supabase</strong>, USA), linked to your user identifier. This lets you
+    <strong>restore your information on a new device</strong> or after reinstalling the app. The following is synced:
+  </p>
+  <ul>
+    <li>Profile (name, date of birth, sex, height, weight, goal, daily target, country, language, plan notes) and profile photo</li>
+    <li>Meal history (nutritional data, <strong>without the photos</strong>)</li>
+    <li>Favorite meals, including their photo</li>
+    <li>Weight and water logs</li>
+    <li>Streak and unlocked achievements</li>
+  </ul>
+  <p>
+    Your meal history photos and AI chat history are <strong>not</strong> uploaded to the cloud: those stay
+    only on your device. Access to your cloud copy is protected by row-level security (RLS): only your
+    authenticated account can read or modify it. When you delete your data (see Section 8), this cloud copy
+    is deleted as well.
   </p>
 
   <!-- 4 -->
@@ -252,6 +276,12 @@
         <td>Google login, secure AI proxy server</td>
       </tr>
       <tr>
+        <td>Cloud sync &amp; backup</td>
+        <td>Supabase, Inc. (USA)</td>
+        <td>Profile, meal history (no photos), favorites (incl. photo), weight and water logs, streak and achievements</td>
+        <td>Account backup and restore</td>
+      </tr>
+      <tr>
         <td>AI Analysis (Claude)</td>
         <td>Anthropic, PBC (USA)</td>
         <td>Food photos, text, chat messages</td>
@@ -306,6 +336,7 @@
     <li>Send local nutritional reminders (only if you enable them)</li>
     <li>Improve your AI nutrition assistant chat experience</li>
     <li>Manage your premium subscription if you choose to subscribe</li>
+    <li>Back up and sync your account data so you can restore it on another device</li>
     <li>Record aggregated usage events (analytics) to understand how the app is used and improve it</li>
   </ul>
 
@@ -322,6 +353,7 @@
       <tr><td>Nutritional history (data, not photos)</td><td>Until you clear app data or uninstall</td></tr>
       <tr><td>Profile data</td><td>Until you clear app data or uninstall</td></tr>
       <tr><td>Weight and water logs</td><td>Until you clear app data or uninstall</td></tr>
+      <tr><td>Cloud copy (profile, history, favorites, weight, water, streak and achievements)</td><td>Until you delete your data from the app or by email; removed together with your deletion request</td></tr>
       <tr><td>Photos/text processed by AI</td><td>Not retained on our servers; processed in real time and discarded</td></tr>
       <tr><td>AI chat history</td><td>Device only; limited to the last 20 messages per session</td></tr>
       <tr><td>Usage events (analytics)</td><td>Until you request deletion by email at krewdesigns.app@gmail.com</td></tr>
@@ -336,7 +368,7 @@
   <ul>
     <li><strong>Access:</strong> all your data is visible directly within the app.</li>
     <li><strong>Correction:</strong> you can edit your profile (name, weight, height, goal, etc.) at any time from the Profile screen.</li>
-    <li><strong>Deletion:</strong> you can delete all your local data directly from the app, via Profile → Delete all my data (requires typing a confirmation word for safety). You can also do this via Device Settings → Apps → Gramly → Clear Data, or automatically when you sign in with a different account. To delete the data associated with your account on our servers (profile and usage events), email us at <a href="mailto:krewdesigns.app@gmail.com">krewdesigns.app@gmail.com</a>.</li>
+    <li><strong>Deletion:</strong> you can delete all your data directly from the app, via Profile → Delete all my data (requires typing a confirmation word for safety). This removes <strong>both your local data and the cloud copy</strong> associated with your account (profile, history, favorites, weight, water and their cloud photos). You can also clear the local data via Device Settings → Apps → Gramly → Clear Data, or automatically when you sign in with a different account. If you prefer, email us at <a href="mailto:krewdesigns.app@gmail.com">krewdesigns.app@gmail.com</a> and we'll do it for you (including usage events).</li>
     <li><strong>Portability:</strong> data resides on your device; you have full control over it.</li>
     <li><strong>Objection:</strong> you can stop using the app and delete all data at any time.</li>
   </ul>
@@ -361,9 +393,10 @@
   <!-- 9 -->
   <h2>9. International Data Transfers</h2>
   <p>
-    When using AI features, your data (photos, text, messages) is transferred to servers located in
-    <strong>the United States</strong> (Supabase, Anthropic, Google). These transfers are necessary to
-    provide the AI nutritional analysis service.
+    When using AI features and cloud sync, your data is transferred to and/or stored on servers located in
+    <strong>the United States</strong> (Supabase, Anthropic, Google). For AI, this is the analysis photos,
+    text and messages; for sync, it is the copy of your account data described in Section 3.4. These transfers
+    are necessary to provide the service.
   </p>
   <p>
     Supabase and Anthropic implement appropriate safeguards for international data transfers.

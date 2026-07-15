@@ -115,7 +115,7 @@
   </nav>
 
   <h1>Política de Privacidad</h1>
-  <p class="meta">Última actualización: 11 de julio de 2026 · Versión 1.1 · Aplicación: Gramly (com.gramly.app)</p>
+  <p class="meta">Última actualización: 15 de julio de 2026 · Versión 1.2 · Aplicación: Gramly (com.gramly.app)</p>
 
   <!-- 1 -->
   <h2>1. Quiénes somos</h2>
@@ -169,14 +169,17 @@
   <h2>3. Dónde se almacenan tus datos</h2>
 
   <div class="notice">
-    <strong>Dato clave:</strong> La gran mayoría de tus datos se almacena <strong>exclusivamente en tu dispositivo</strong>,
-    en una base de datos SQLite local. Gramly no opera servidores propios de almacenamiento de datos de usuarios.
+    <strong>Dato clave:</strong> Tus datos viven principalmente en tu dispositivo, en una base de datos SQLite local.
+    Para que puedas recuperar tu cuenta si cambiás o perdés el teléfono, también guardamos una copia de los datos de
+    tu cuenta en nuestra nube segura (Supabase). Las fotos del historial de comidas y el chat con IA
+    <strong>nunca</strong> salen de tu dispositivo.
   </div>
 
   <h3>3.1 Almacenamiento local (tu dispositivo)</h3>
   <p>
     El historial de comidas, macronutrientes, calorías, peso, agua, favoritos y configuración de perfil residen
-    en la base de datos SQLite interna de la app. Nadie más tiene acceso a estos datos a través de nuestros sistemas.
+    en la base de datos SQLite interna de la app y son los que usás día a día. Una copia de los datos de tu cuenta
+    también se respalda en la nube (ver 3.4).
   </p>
 
   <h3>3.2 Android Auto Backup (Google Drive)</h3>
@@ -192,7 +195,27 @@
     Las fotos se guardan en el almacenamiento interno del dispositivo (<code>Documents/meals/</code>),
     no en ningún servidor de Gramly. Las fotos del historial se <strong>eliminan automáticamente</strong>
     después de 365 días. Las fotos de comidas guardadas como favoritas se conservan indefinidamente
-    hasta que las eliminés manualmente.
+    hasta que las eliminés manualmente. Las fotos del historial <strong>no</strong> se suben a la nube.
+  </p>
+
+  <h3>3.4 Sincronización con la nube (respaldo de tu cuenta)</h3>
+  <p>
+    Cuando iniciás sesión con tu cuenta, Gramly guarda una copia de los datos de tu cuenta en nuestra base de datos
+    en la nube (<strong>Supabase</strong>, EE.UU.), asociada a tu identificador de usuario. Esto te permite
+    <strong>restaurar tu información en un dispositivo nuevo</strong> o si reinstalás la app. Se sincronizan:
+  </p>
+  <ul>
+    <li>Perfil (nombre, fecha de nacimiento, sexo, altura, peso, objetivo, meta diaria, país, idioma, notas del plan) y foto de perfil</li>
+    <li>Historial de comidas (datos nutricionales, <strong>sin las fotos</strong>)</li>
+    <li>Comidas favoritas, incluida su foto</li>
+    <li>Registros de peso y de agua</li>
+    <li>Racha y logros desbloqueados</li>
+  </ul>
+  <p>
+    <strong>No</strong> se suben a la nube las fotos del historial de comidas ni el historial de chat con IA:
+    esos permanecen solo en tu dispositivo. El acceso a tu copia en la nube está protegido por políticas de
+    seguridad a nivel de fila (RLS): únicamente tu cuenta autenticada puede leerla o modificarla. Cuando borrás
+    tus datos (ver sección 8), esta copia en la nube también se elimina.
   </p>
 
   <!-- 4 -->
@@ -256,6 +279,12 @@
         <td>Login con Google, servidor proxy seguro para IA</td>
       </tr>
       <tr>
+        <td>Sincronización y respaldo en la nube</td>
+        <td>Supabase, Inc. (EE.UU.)</td>
+        <td>Perfil, historial de comidas (sin fotos), favoritos (incl. foto), registros de peso y agua, racha y logros</td>
+        <td>Copia de seguridad y restauración de tu cuenta</td>
+      </tr>
+      <tr>
         <td>Análisis con IA (Claude)</td>
         <td>Anthropic, PBC (EE.UU.)</td>
         <td>Fotos de comidas, texto, mensajes de chat</td>
@@ -310,6 +339,7 @@
     <li>Enviarte recordatorios nutricionales locales (solo si los activás)</li>
     <li>Mejorar la experiencia del asistente de chat de nutrición</li>
     <li>Gestionar tu suscripción premium si decidís suscribirte</li>
+    <li>Respaldar y sincronizar los datos de tu cuenta para que puedas restaurarlos en otro dispositivo</li>
     <li>Registrar eventos de uso agregados (analíticas) para entender cómo se usa la app y mejorarla</li>
   </ul>
 
@@ -326,6 +356,7 @@
       <tr><td>Historial nutricional (datos, no fotos)</td><td>Hasta que borres los datos de la app o desinstales</td></tr>
       <tr><td>Datos de perfil</td><td>Hasta que borres los datos de la app o desinstales</td></tr>
       <tr><td>Registros de peso y agua</td><td>Hasta que borres los datos de la app o desinstales</td></tr>
+      <tr><td>Copia en la nube (perfil, historial, favoritos, peso, agua, racha y logros)</td><td>Hasta que borres tus datos desde la app o por email; se elimina junto con tu solicitud de borrado</td></tr>
       <tr><td>Fotos/texto procesados por IA</td><td>No retenidos en nuestros servidores; procesados en tiempo real y descartados</td></tr>
       <tr><td>Historial de chat con IA</td><td>Solo en tu dispositivo; se limita a las últimas 20 conversaciones por sesión</td></tr>
       <tr><td>Eventos de uso (analíticas)</td><td>Hasta que solicites su eliminación por email a krewdesigns.app@gmail.com</td></tr>
@@ -340,7 +371,7 @@
   <ul>
     <li><strong>Acceso:</strong> todos tus datos están visibles directamente en la app.</li>
     <li><strong>Corrección:</strong> podés editar tu perfil (nombre, peso, altura, objetivo, etc.) en cualquier momento desde la pantalla de Perfil.</li>
-    <li><strong>Eliminación:</strong> podés borrar todos tus datos locales directamente desde la app, en Perfil → Borrar todos mis datos (requiere confirmación escribiendo una palabra de seguridad). También podés hacerlo desde Ajustes del dispositivo → Apps → Gramly → Borrar datos, o automáticamente al iniciar sesión con una cuenta diferente. Para eliminar los datos asociados a tu cuenta en nuestros servidores (perfil y eventos de uso), escribinos a <a href="mailto:krewdesigns.app@gmail.com">krewdesigns.app@gmail.com</a>.</li>
+    <li><strong>Eliminación:</strong> podés borrar todos tus datos directamente desde la app, en Perfil → Borrar todos mis datos (requiere confirmación escribiendo una palabra de seguridad). Esto elimina <strong>tanto los datos locales como la copia en la nube</strong> asociada a tu cuenta (perfil, historial, favoritos, peso, agua y sus fotos en la nube). También podés borrar los datos locales desde Ajustes del dispositivo → Apps → Gramly → Borrar datos, o automáticamente al iniciar sesión con una cuenta diferente. Si preferís, escribinos a <a href="mailto:krewdesigns.app@gmail.com">krewdesigns.app@gmail.com</a> y lo hacemos por vos (incluye los eventos de uso).</li>
     <li><strong>Portabilidad:</strong> los datos residen en tu dispositivo; tenés control total sobre ellos.</li>
     <li><strong>Oposición:</strong> podés dejar de usar la app en cualquier momento y borrar todos los datos.</li>
   </ul>
@@ -367,9 +398,10 @@
   <!-- 9 -->
   <h2>9. Transferencias internacionales de datos</h2>
   <p>
-    Al usar las funciones de IA, tus datos (fotos, texto, mensajes) se transfieren a servidores ubicados en
-    <strong>Estados Unidos</strong> (Supabase, Anthropic, Google). Estas transferencias son necesarias para
-    proveer el servicio de análisis nutricional con IA.
+    Al usar las funciones de IA y la sincronización con la nube, tus datos se transfieren y/o se almacenan en
+    servidores ubicados en <strong>Estados Unidos</strong> (Supabase, Anthropic, Google). En el caso de la IA
+    son las fotos, el texto y los mensajes de análisis; en el caso de la sincronización, la copia de los datos de
+    tu cuenta descrita en la sección 3.4. Estas transferencias son necesarias para proveer el servicio.
   </p>
   <p>
     Supabase y Anthropic implementan salvaguardas adecuadas para las transferencias internacionales de datos.
