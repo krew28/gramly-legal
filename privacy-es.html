@@ -179,18 +179,10 @@
   <p>
     El historial de comidas, macronutrientes, calorías, peso, agua, favoritos y configuración de perfil residen
     en la base de datos SQLite interna de la app y son los que usás día a día. Una copia de los datos de tu cuenta
-    también se respalda en la nube (ver 3.4).
+    también se respalda en la nube (ver 3.3).
   </p>
 
-  <h3>3.2 Android Auto Backup (Google Drive)</h3>
-  <p>
-    Android realiza automáticamente copias de seguridad de los datos de las apps en tu cuenta personal de Google Drive.
-    Esto incluye la base de datos de Gramly. Este proceso es estándar en todos los dispositivos Android desde API 23,
-    está gestionado enteramente por Google, y los datos van a <strong>tu propio Google Drive</strong>, no al nuestro.
-    Podés desactivarlo desde Ajustes → Sistema → Copia de seguridad del dispositivo.
-  </p>
-
-  <h3>3.3 Fotografías de comidas</h3>
+  <h3>3.2 Fotografías de comidas</h3>
   <p>
     Las fotos se guardan en el almacenamiento interno del dispositivo (<code>Documents/meals/</code>),
     no en ningún servidor de Gramly. Las fotos del historial se <strong>eliminan automáticamente</strong>
@@ -198,7 +190,7 @@
     hasta que las eliminés manualmente. Las fotos del historial <strong>no</strong> se suben a la nube.
   </p>
 
-  <h3>3.4 Sincronización con la nube (respaldo de tu cuenta)</h3>
+  <h3>3.3 Sincronización con la nube (respaldo de tu cuenta)</h3>
   <p>
     Cuando iniciás sesión con tu cuenta, Gramly guarda una copia de los datos de tu cuenta en nuestra base de datos
     en la nube (<strong>Supabase</strong>, EE.UU.), asociada a tu identificador de usuario. Esto te permite
@@ -303,12 +295,6 @@
         <td>Búsqueda nutricional por código de barras</td>
       </tr>
       <tr>
-        <td>Copia de seguridad</td>
-        <td>Google LLC (EE.UU.)</td>
-        <td>Base de datos local (a tu propio Google Drive)</td>
-        <td>Android Auto Backup</td>
-      </tr>
-      <tr>
         <td>Facturación y suscripciones</td>
         <td>Google Play (Google LLC)</td>
         <td>Datos de pago (manejados directamente por Google)</td>
@@ -401,7 +387,7 @@
     Al usar las funciones de IA y la sincronización con la nube, tus datos se transfieren y/o se almacenan en
     servidores ubicados en <strong>Estados Unidos</strong> (Supabase, Anthropic, Google). En el caso de la IA
     son las fotos, el texto y los mensajes de análisis; en el caso de la sincronización, la copia de los datos de
-    tu cuenta descrita en la sección 3.4. Estas transferencias son necesarias para proveer el servicio.
+    tu cuenta descrita en la sección 3.3. Estas transferencias son necesarias para proveer el servicio.
   </p>
   <p>
     Supabase y Anthropic implementan salvaguardas adecuadas para las transferencias internacionales de datos.

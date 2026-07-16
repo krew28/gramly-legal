@@ -177,18 +177,10 @@
   <p>
     Your meal history, macronutrients, calories, weight logs, water logs, favorites and profile settings
     all reside in the app's internal SQLite database and are what you use day to day. A copy of your account
-    data is also backed up to the cloud (see 3.4).
+    data is also backed up to the cloud (see 3.3).
   </p>
 
-  <h3>3.2 Android Auto Backup (Google Drive)</h3>
-  <p>
-    Android automatically backs up app data to your personal Google Drive account. This includes Gramly's
-    database and is a standard Android feature (available since API 23), managed entirely by Google.
-    The backup goes to <strong>your own Google Drive</strong>, not ours. You can disable it in
-    Settings → System → Backup.
-  </p>
-
-  <h3>3.3 Food Photographs</h3>
+  <h3>3.2 Food Photographs</h3>
   <p>
     Photos are saved in your device's internal storage (<code>Documents/meals/</code>),
     not on any Gramly server. History photos are <strong>automatically deleted</strong> after 365 days.
@@ -196,7 +188,7 @@
     History photos are <strong>not</strong> uploaded to the cloud.
   </p>
 
-  <h3>3.4 Cloud Sync (Account Backup)</h3>
+  <h3>3.3 Cloud Sync (Account Backup)</h3>
   <p>
     When you sign in with your account, Gramly keeps a copy of your account data in our cloud database
     (<strong>Supabase</strong>, USA), linked to your user identifier. This lets you
@@ -300,12 +292,6 @@
         <td>Barcode nutritional lookup</td>
       </tr>
       <tr>
-        <td>Backup</td>
-        <td>Google LLC (USA)</td>
-        <td>Local database (to your own Google Drive)</td>
-        <td>Android Auto Backup</td>
-      </tr>
-      <tr>
         <td>Billing &amp; subscriptions</td>
         <td>Google Play (Google LLC)</td>
         <td>Payment data (handled directly by Google)</td>
@@ -395,7 +381,7 @@
   <p>
     When using AI features and cloud sync, your data is transferred to and/or stored on servers located in
     <strong>the United States</strong> (Supabase, Anthropic, Google). For AI, this is the analysis photos,
-    text and messages; for sync, it is the copy of your account data described in Section 3.4. These transfers
+    text and messages; for sync, it is the copy of your account data described in Section 3.3. These transfers
     are necessary to provide the service.
   </p>
   <p>
