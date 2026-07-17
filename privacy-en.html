@@ -115,7 +115,7 @@
   </nav>
 
   <h1>Privacy Policy</h1>
-  <p class="meta">Last updated: July 15, 2026 · Version 1.2 · App: Gramly (com.gramly.app)</p>
+  <p class="meta">Last updated: July 17, 2026 · Version 1.3 · App: Gramly (com.gramly.app)</p>
 
   <!-- 1 -->
   <h2>1. Who We Are</h2>
@@ -145,6 +145,10 @@
     <li>Messages sent to the AI nutrition assistant (chat)</li>
     <li>Gramly Real Plan personal notes (preferences, restrictions, comments about your progress)</li>
   </ul>
+  <p>
+    Voice dictation is converted to text <strong>on your own device</strong> using the operating system's
+    speech recognition; the audio file is not sent to or stored on Gramly's servers.
+  </p>
 
   <h3>2.2 Data from Google Sign-In</h3>
   <p>When you sign in with Google, we receive from Google:</p>
@@ -161,6 +165,7 @@
     <li>Language and appearance preferences</li>
     <li>Selected background theme index</li>
     <li>App usage events (analytics: which features you use and when — e.g. photo analyzed, chat message sent), linked to your user account</li>
+    <li>Your premium subscription status and receipt, if you subscribe (see Section 5)</li>
   </ul>
 
   <!-- 3 -->
@@ -292,10 +297,16 @@
         <td>Barcode nutritional lookup</td>
       </tr>
       <tr>
-        <td>Billing &amp; subscriptions</td>
+        <td>Billing (payment processing)</td>
         <td>Google Play (Google LLC)</td>
-        <td>Payment data (handled directly by Google)</td>
-        <td>Premium subscription management</td>
+        <td>Payment data — processed directly by Google; Gramly never sees your card or payment details</td>
+        <td>Charging the premium subscription</td>
+      </tr>
+      <tr>
+        <td>Subscription validation &amp; status</td>
+        <td>Supabase, Inc. (USA)</td>
+        <td>Subscription status and plan, expiry date, Google Play purchase token and order number, and Google's verification response</td>
+        <td>Validate your purchase and manage your premium access</td>
       </tr>
       <tr>
         <td>Usage analytics</td>
@@ -340,6 +351,7 @@
       <tr><td>Profile data</td><td>Until you clear app data or uninstall</td></tr>
       <tr><td>Weight and water logs</td><td>Until you clear app data or uninstall</td></tr>
       <tr><td>Cloud copy (profile, history, favorites, weight, water, streak and achievements)</td><td>Until you delete your data from the app or by email; removed together with your deletion request</td></tr>
+      <tr><td>Subscription history (status, plan, expiry, Google Play purchase token and order number)</td><td>In the cloud (Supabase); deleted when you delete your account</td></tr>
       <tr><td>Photos/text processed by AI</td><td>Not retained on our servers; processed in real time and discarded</td></tr>
       <tr><td>AI chat history</td><td>Device only; limited to the last 20 messages per session</td></tr>
       <tr><td>Usage events (analytics)</td><td>Until you request deletion by email at krewdesigns.app@gmail.com</td></tr>
