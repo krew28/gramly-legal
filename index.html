@@ -17,7 +17,7 @@
       padding: 2rem;
     }
     .container {
-      max-width: 560px;
+      max-width: 780px;
       width: 100%;
       text-align: center;
     }
@@ -43,8 +43,14 @@
     }
     .grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 1rem;
+    }
+    @media (max-width: 640px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 420px) {
+      .grid { grid-template-columns: 1fr; }
     }
     .card {
       background: #161616;
@@ -92,35 +98,37 @@
     <h1>Legal Documents</h1>
 
     <div class="grid">
-      <a class="card" href="privacy-es.html">
-        <div class="card-icon">🔒</div>
-        <div class="card-title">Política de Privacidad</div>
-        <div class="card-lang">Español</div>
-      </a>
+      <!-- Fila 1 — English -->
       <a class="card" href="privacy-en.html">
         <div class="card-icon">🔒</div>
         <div class="card-title">Privacy Policy</div>
         <div class="card-lang">English</div>
-      </a>
-      <a class="card" href="terms-es.html">
-        <div class="card-icon">📄</div>
-        <div class="card-title">Términos y Condiciones</div>
-        <div class="card-lang">Español</div>
       </a>
       <a class="card" href="terms-en.html">
         <div class="card-icon">📄</div>
         <div class="card-title">Terms of Service</div>
         <div class="card-lang">English</div>
       </a>
-      <a class="card" href="delete-account-es.html">
-        <div class="card-icon">🗑️</div>
-        <div class="card-title">Eliminar tu cuenta</div>
-        <div class="card-lang">Español</div>
-      </a>
       <a class="card" href="delete-account-en.html">
         <div class="card-icon">🗑️</div>
         <div class="card-title">Delete your account</div>
         <div class="card-lang">English</div>
+      </a>
+      <!-- Fila 2 — Español -->
+      <a class="card" href="privacy-es.html">
+        <div class="card-icon">🔒</div>
+        <div class="card-title">Política de Privacidad</div>
+        <div class="card-lang">Español</div>
+      </a>
+      <a class="card" href="terms-es.html">
+        <div class="card-icon">📄</div>
+        <div class="card-title">Términos y Condiciones</div>
+        <div class="card-lang">Español</div>
+      </a>
+      <a class="card" href="delete-account-es.html">
+        <div class="card-icon">🗑️</div>
+        <div class="card-title">Eliminar tu cuenta</div>
+        <div class="card-lang">Español</div>
       </a>
     </div>
 
